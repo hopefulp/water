@@ -1,0 +1,60 @@
+SYSTEM = {"magmom": 0.0, "cutoff": 450, "soc": false, "rw": "w", "solvent": false, "log": "True", "iofile": "incar.key", "dft": "re0", "precision": "high", "crelax": "sp", "dispersion": "d3", "uterm": null, "ini": "start", "mag": "nm", "postscf": null, "dynamics": null, "dielectric": 78.3, "nmag": null}
+
+#MAGMOM:: natom*magnetism ... 
+
+# continuation
+ISTART = 0
+ICHARG = 2
+ISPIN = 1
+
+# precision 1
+ENCUT = 450
+PREC = high
+ISMEAR = 0 ; SIGMA = 0.05
+NELMIN = 4 ; NELM = 500
+# precision 2
+GGA_COMPAT=.FALSE.
+#VOSKOWN = 1
+ADDGRID = .TRUE.
+
+# mixing
+LMAXMIX = 4
+#IMIX = 4; #AMIX = 0.2; #BMIX = 0.0001; #AMIX_MAG = 0.8; #BMIX_MAG = 0.0001
+
+# parallel performance# functional (PE=PBE,RP=RPBE,RE=revPBE,b3=B3LYP,ML=vdw-df2, MK=rev-vdW-DF2, 
+# D correction if not vdW-DF (0-no, 1-d2, 11-d3_zero(Grimme), 12-de_BJ, 2-ts)
+GGA = re
+LREAL = Auto; LPLANE = .TRUE.
+LSCALAPACK = .FALSE.
+
+LHFCALC = .TRUE.
+ALGO = D; TIME = 0.4
+NSIM = 4
+ENCUTFOCK = 0
+NKRED = 2
+Block NPAR tag
+IVDW = 11      ! D3-Grimme
+
+
+### DFT virtual orbital
+#ALGO = Exact
+#NBANDS = 64
+#LOPTICS = .TRUE.
+
+### U-correction
+
+# Optimization
+#NSW = ; ISIF = ; IBRION = ; POTIM = 
+
+# Solvent effect::higher Ecut is required (LSOL=.TRUE. EB_K for dielectric) 
+###### POST SCF CALC :: SOC [DOS|PCHG|NEB]  #########
+### spin-orbit coupling   (LSORBIT=.TRUE.) 
+#NSW = ; ISIF = ; IBRION = ; POTIM = 
+
+###### log
+LROBIT = 11
+LAECHG = .FALSE.
+LWAVE = .TRUE.
+LCHARG = .TRUE.
+
+#IDIPOL = 3
