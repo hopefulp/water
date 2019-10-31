@@ -8,7 +8,7 @@ ICHARG = 2
 ISPIN = 1
 
 # precision 1
-ENCUT = 450
+ENCUT = 300
 PREC = high
 ISMEAR = 0 ; SIGMA = 0.05
 NELMIN = 4 ; NELM = 500
@@ -30,9 +30,10 @@ LSCALAPACK = .FALSE.
 LHFCALC = .TRUE.
 ALGO = D; TIME = 0.4
 NSIM = 4
+NPAR = 2 
 ENCUTFOCK = 0
-NKRED = 2
-Block NPAR tag
+#NKRED = 1
+#Block NPAR tag
 IVDW = 11      ! D3-Grimme
 
 
